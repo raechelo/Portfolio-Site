@@ -10,6 +10,7 @@ import scss from '../assets/logos/scss.png';
 import css from '../assets/logos/css.svg';
 
 
+
 export default function Contact() {
   const displayData = projectData.contactData.map((c, i) => (<article index={i}><a href={c.link}><img src={c.img} alt={`find me on ${c.name}`} /></a></article>))
 

@@ -8,13 +8,13 @@ import redux from '../assets/logos/redux.svg';
 import nodejs from '../assets/logos/nodejs.svg';
 import scss from '../assets/logos/scss.png';
 import css from '../assets/logos/css.svg';
-import enzyme from '../assets/logos/enzyme.png';
+
 
 
 export default function Contact() {
   const displayData = projectData.contactData.map((c, i) => (<article index={i}><a href={c.link}><img src={c.img} alt={`find me on ${c.name}`} /></a></article>))
 
-  const logos = [js, css, html, react, redux, nodejs, scss, enzyme];
+  const logos = [js, react, redux, nodejs, scss, css, html];
 
   const displaySkills = logos.map((l, i) => <img className="logo" src={l} alt={`${l}`} index={i} />)
 

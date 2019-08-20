@@ -122,6 +122,11 @@ const Projects = () => {
               <a href={project.link} target='blank'><button className="hvr-sweep-to-right-slider"><i className="fab fa-github-alt"></i> View Repo</button></a>
               <a href={project.demo} target='blank'><button className="hvr-sweep-to-right-slider">Demo Here <i className="fas fa-desktop"></i></button></a>
             </section>
+            <section className="skills-slider">
+            <p>
+              {project.stack.map((s, i) => (<img src={s} alt={s} className="stack-slider" index={i} />))}
+            </p>
+            </section>
           </div>))}
         </Slider>
       </div>

@@ -1,44 +1,35 @@
 import React, { Component } from 'react';
-import Projects from '../Projects/Projects';
-import About from '../About/about';
-import Contact from '../Contact/Contact';
 import Nav from '../Nav/Nav';
 import Home from '../Home/Home';
-import { Sticky, StickyContainer } from 'react-sticky';
+import { red } from '@mui/material/colors';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-class App extends Component {
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: red[500],
+    },
+  },
+});
 
-  render() {
+export default function App() {
+  var defaultTheme = localStorage.getItem('theme');
 
-    return (
-    <section className="App">
-        <section id={'home'}>
-          <Home />
-        </section>
-        <StickyContainer>
-          <Sticky>
-              {({
-                style,
-              }) => (
-                <nav style={style}>
-                  {/* ... */}
-                  <Nav />
-                </nav>
-              )}
-            </Sticky>
-        <section id={'about'}>
-          <About />
-        </section>
-        <section id={'contact'}>
-          <Contact />
-        </section>
-        <section id={'projects'}>
-          <Projects />
-        </section>
-      </StickyContainer>
-    </section>
-    )
-  }
+
+  return (
+    <ThemeProvider theme={theme} >
+      <section className="App" >
+        <Nav />
+      </section>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+// {({
+//   style,
+// }) => (
+//   <nav style={style}>
+//     {/* ... */}
+//     <Nav />
+//   </nav>
+// )}

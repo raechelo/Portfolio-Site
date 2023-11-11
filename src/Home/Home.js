@@ -1,10 +1,10 @@
 import React from 'react';
-import Clock from '../Clock/Clock';
+import { Typography } from '@mui/material';
 
 const Home = () => {
   return (
     <div>
-      <Clock />
+      <Typography variant='h2'>About</Typography>
     </div>
   )
 }

@@ -13,12 +13,17 @@ export const themeOptions: ThemeOptions = {
     h1: {
       fontFamily: 'Noto Sans Kawi',
       fontWeight: 700,
-      background: 'linear-gradient(to right, hsla(223, 24%, 45%, .8) 0%, hsla(200, 28%, 59%, .8) 100%)',
+      background: 'linear-gradient(to right, hsl(223, 24%, 45%) 0%, hsl(200, 28%, 59%) 100%)',
       '-webkit-background-clip': 'text',
       '-webkit-text-fill-color': 'transparent',
+      textAlign: 'center',
     },
     h2: {
       fontFamily: 'Noto Sans Kawi',
+      background: 'linear-gradient(to right, hsl(223, 24%, 45%) 0%, hsl(200, 28%, 59%) 100%)',
+      '-webkit-background-clip': 'text',
+      '-webkit-text-fill-color': 'transparent',
+      textAlign: 'center',
     },
     h3: {
       fontFamily: 'Noto Sans Kawi',
@@ -26,7 +31,7 @@ export const themeOptions: ThemeOptions = {
     h4: {
       fontFamily: 'Noto Sans Kawi',
       fontWeight: 700,
-      background: 'linear-gradient(to right, hsla(223, 24%, 45%, .8) 0%, hsla(200, 28%, 59%, .8) 100%)',
+      background: 'linear-gradient(to right, hsl(223, 24%, 45%) 0%, hsl(200, 28%, 59%) 100%)',
       '-webkit-background-clip': 'text',
       '-webkit-text-fill-color': 'transparent',
     },
@@ -44,6 +49,7 @@ export const themeOptions: ThemeOptions = {
     },
     body1: {
       fontFamily: 'Noto Sans Kawi',
+      color: 'hsla(200, 28%, 59%, .8)',
     },
     body2: {
       fontFamily: 'Noto Sans Kawi',

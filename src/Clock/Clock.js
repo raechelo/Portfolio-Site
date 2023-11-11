@@ -25,15 +25,13 @@ const Clock = () => {
   setInterval(setDate, 1000);
 
   return (
-    <div>
-      <div className='clock'>
-        <div className='clock-face'>
-          <div className='hand' id='hour-hand'></div>
-          <div className='hand' id='minute-hand'></div>
-          <div className='hand' id='second-hand'></div>
-          <Typography className='clock-num twelve' sx={{ fontSize: '2rem' }}>XII</Typography>
-          <Typography variant='h4' className='clock-headline'>Meet me at <br /> Midnight</Typography>
-        </div>
+    <div className='clock'>
+      <div className='clock-face'>
+        <div className='hand' id='hour-hand'></div>
+        <div className='hand' id='minute-hand'></div>
+        <div className='hand' id='second-hand'></div>
+        <Typography className='clock-num twelve' sx={{ fontSize: '2rem' }}>XII</Typography>
+        <Typography variant='h4' className='clock-headline'>Meet me at <br /> Midnight</Typography>
       </div>
     </div>
   )

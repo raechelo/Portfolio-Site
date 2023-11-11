@@ -12,6 +12,10 @@ export const themeOptions: ThemeOptions = {
   typography: {
     h1: {
       fontFamily: 'Noto Sans Kawi',
+      fontWeight: 700,
+      background: 'linear-gradient(to right, hsla(223, 24%, 45%, .8) 0%, hsla(200, 28%, 59%, .8) 100%)',
+      '-webkit-background-clip': 'text',
+      '-webkit-text-fill-color': 'transparent',
     },
     h2: {
       fontFamily: 'Noto Sans Kawi',
@@ -22,6 +26,9 @@ export const themeOptions: ThemeOptions = {
     h4: {
       fontFamily: 'Noto Sans Kawi',
       fontWeight: 700,
+      background: 'linear-gradient(to right, hsla(223, 24%, 45%, .8) 0%, hsla(200, 28%, 59%, .8) 100%)',
+      '-webkit-background-clip': 'text',
+      '-webkit-text-fill-color': 'transparent',
     },
     h5: {
       fontFamily: 'Noto Sans Kawi',

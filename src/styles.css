@@ -8,11 +8,12 @@ body {
 .clock {
   border: 20px solid hsla(275, 100%, 90%, .2);
   border-radius: 50%;
-  height: 30rem;
-  width: 30rem;
-  margin: 50px auto;
+  height: 40rem;
+  width: 40rem;
   position: relative;
   padding: 2rem;
+  left: -150px;
+  top: -150px;
 }
 
 .clock-face {
@@ -27,11 +28,11 @@ body {
   position: absolute;
   bottom: 0;
   right: 30%;
-  background: #57678E;
-background: linear-gradient(to right, hsla(223, 24%, 45%, .8) 0%, hsla(200, 28%, 59%, .8) 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, hsla(223, 24%, 45%, .8) 0%, hsla(200, 28%, 59%, .8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 
 .clock-num {
   font-family: serif;

@@ -1,5 +1,6 @@
 import { Divider, Drawer, Button, Typography } from '@mui/material';
 import React, { useState } from 'react'
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -18,8 +19,8 @@ export default function Nav() {
   return (
     <div>
       <>
-        <Button onClick={e => handleOpen(e)} style={{ marginLeft: 'auto', display: 'flex' }}>
-          OPEN BAYBAY
+        <Button color='secondary' onClick={e => handleOpen(e)} style={{ marginLeft: 'auto', display: 'flex' }}>
+          <MenuIcon />
         </Button>
         <Drawer
           anchor='right'

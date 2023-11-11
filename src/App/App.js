@@ -1,35 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Nav from '../Nav/Nav';
-import Home from '../Home/Home';
-import { red } from '@mui/material/colors';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: red[500],
-    },
-  },
-});
+import { ThemeProvider } from '@mui/material/styles';
+import { theme, themeOptions } from '../theme.ts';
+import Home from '../Home/Home.js';
+import '../styles.css';
 
 export default function App() {
   var defaultTheme = localStorage.getItem('theme');
 
 
   return (
-    <ThemeProvider theme={theme} >
-      <section className="App" >
+    <ThemeProvider theme={theme}>
+      <div className="App" style={{
+        backgroundColor: themeOptions.palette.primary.main,
+        height: '100vh',
+      }} >
         <Nav />
-      </section>
+        <Home />
+      </div>
     </ThemeProvider>
   )
 }
-
-// {({
-//   style,
-// }) => (
-//   <nav style={style}>
-//     {/* ... */}
-//     <Nav />
-//   </nav>
-// )}

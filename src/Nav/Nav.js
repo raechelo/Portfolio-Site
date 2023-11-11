@@ -1,4 +1,4 @@
-import { Divider, Drawer, Button, Menu, Typography } from '@mui/material';
+import { Divider, Drawer, Button, Typography } from '@mui/material';
 import React, { useState } from 'react'
 
 export default function Nav() {
@@ -18,8 +18,7 @@ export default function Nav() {
   return (
     <div>
       <>
-        <Button onClick={e => handleOpen(e)}>
-          <Menu />
+        <Button onClick={e => handleOpen(e)} style={{ marginLeft: 'auto', display: 'flex' }}>
           OPEN BAYBAY
         </Button>
         <Drawer
@@ -27,18 +26,17 @@ export default function Nav() {
           open={open}
           onClose={handleClose}
         >
-          <Typography>Choose an album</Typography>
-          {/* // add list of TS albumbs here */}
-          <Divider />
-          <Typography>Contact me</Typography>
-          <Typography>About me</Typography>
-          {/* put links here to github, linkedin */}
-          {/* add dark mode option here? will def conflict with customized themes tho */}
+          <div style={{ padding: '24px' }}>
+
+            {/* <Typography>Choose an album</Typography> */}
+            {/* // add list of TS albumbs here */}
+            {/* <Divider /> */}
+            <Typography>Contact me</Typography>
+            <Typography>About me</Typography>
+            {/* put links here to github, linkedin */}
+            {/* add dark mode option here? will def conflict with customized themes tho */}
+          </div>
         </Drawer>
-        {/* <Scrollchor to="#" className="nav-link">home</Scrollchor>
-      <Scrollchor to="#about" className="nav-link">about</Scrollchor>
-      <Scrollchor to="#contact" className="nav-link">contact</Scrollchor>
-    <Scrollchor to="#projects" className="nav-link">projects</Scrollchor> */}
       </>
     </div>
   )

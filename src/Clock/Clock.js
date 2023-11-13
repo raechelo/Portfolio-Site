@@ -1,7 +1,11 @@
 import { Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react';
+import ClockFace from './ClockFace';
 
 const Clock = () => {
+  const clockFaceRef = useRef(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+
   const setDate = () => {
     const hourHand = document.getElementById('hour-hand');
     const minuteHand = document.getElementById('minute-hand');
@@ -26,7 +30,9 @@ const Clock = () => {
 
   return (
     <div className='clock'>
-      <div className='clock-face'>
+      <div className='clock-face' ref={clockFaceRef}>
+        <ClockFace anchor={clockFaceRef} />
+        <div className='center-dot'></div>
         <div className='hand' id='hour-hand'></div>
         <div className='hand' id='minute-hand'></div>
         <div className='hand' id='second-hand'></div>

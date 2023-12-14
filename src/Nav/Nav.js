@@ -1,37 +1,40 @@
-import { Divider, Drawer, Button, Typography } from '@mui/material';
-import React, { useState } from 'react'
-import MenuIcon from '@mui/icons-material/Menu';
+import { Divider, Drawer, Button, Typography } from "@mui/material";
+import React, { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import { ClickAwayListener } from "@mui/material";
 
-export default function Nav() {
-  const [open, setOpen] = useState(false);
+export default function Nav({
+  open,
+  handleDrawer,
+  openThemePicker,
+  currentTheme,
+}) {
+  // const [open, setOpen] = useState(false);
 
   const handleOpen = (e) => {
-    if (e.type === 'keydown' && (e.key === 'Tab' || e.key === 'Shift')) {
+    if (e.type === "keydown" && (e.key === "Tab" || e.key === "Shift")) {
       return;
     }
-    setOpen(true);
+    handleDrawer(true);
   };
 
-  const handleClose = () => {
-    setOpen(false)
-  }
-
   return (
-    <div>
+    <ClickAwayListener onClickAway={() => handleDrawer(false)}>
       <>
-        <Button color='secondary' onClick={e => handleOpen(e)} style={{ marginLeft: 'auto', display: 'flex' }}>
+        <Button
+          color="secondary"
+          onClick={(e) => handleOpen(e)}
+          style={{ marginLeft: "auto", display: "flex" }}
+        >
           <MenuIcon />
         </Button>
-        <Drawer
-          anchor='right'
-          open={open}
-          onClose={handleClose}
-        >
-          <div style={{ padding: '24px' }}>
-
-            {/* <Typography>Choose an album</Typography> */}
-            {/* // add list of TS albumbs here */}
-            {/* <Divider /> */}
+        <Drawer anchor="right" open={open} onClose={() => handleDrawer(false)}>
+          <div style={{ padding: "24px" }}>
+            <Typography>Current theme: {currentTheme}</Typography>
+            <Button variant="contained" onClick={openThemePicker}>
+              Pick a theme
+            </Button>
+            <Divider />
             <Typography>Contact me</Typography>
             <Typography>About me</Typography>
             {/* put links here to github, linkedin */}
@@ -39,6 +42,6 @@ export default function Nav() {
           </div>
         </Drawer>
       </>
-    </div>
-  )
+    </ClickAwayListener>
+  );
 }

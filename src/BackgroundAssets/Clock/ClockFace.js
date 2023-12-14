@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 const CLOCK_PADDING = 64;
 
-const ClockFace = ({ anchor }) => {
+export const ClockFace = ({ anchor }) => {
   // CANVAS VARS
   const canvasRef = useRef(null);
   const [height, setHeight] = useState(0);
@@ -61,5 +61,3 @@ const ClockFace = ({ anchor }) => {
     />
   );
 };
-
-export default ClockFace;

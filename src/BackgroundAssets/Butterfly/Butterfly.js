@@ -15,6 +15,7 @@ export const Butterfly = () => (
       <div className="ulw-innner inner-wing">
         <div className="ulw-inner-border inner-wing-border">
           <div className="ulw-dot-top dot" />
+          <div className="ulw-line-top line" />
           <div className="ulw-dot-mid dot" />
           <div className="ulw-dot-bot dot" />
         </div>

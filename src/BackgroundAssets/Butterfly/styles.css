@@ -112,6 +112,13 @@
   z-index: 5;
 }
 
+.line {
+  width: 125px;
+  height: 15px;
+  border-radius: 35%;
+  transform: rotate(135deg);
+}
+
 /* UPPER LEFT WING STYLES */
 .ulw {
   left: 0px;

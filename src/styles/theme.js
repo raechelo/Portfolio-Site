@@ -1,33 +1,35 @@
 import { createTheme } from "@mui/material/styles";
 
-export const evermoreThemeOptions = {
+export const themeOptions = {
   palette: {
     type: "light",
     primary: {
-      main: "#c5aa92",
+      main: "#19259b",
     },
     secondary: {
-      main: "#7d3e28",
+      main: "#747474",
     },
   },
   typography: {
     h1: {
-      fontFamily: "IM Fell DW Pica",
+      fontFamily: "Rye",
     },
     h2: {
-      fontFamily: "IM Fell DW Pica",
+      fontFamily: "Rye",
+      color: "#19259b",
     },
     h3: {
-      fontFamily: "IM Fell DW Pica",
+      fontFamily: "Rye",
     },
     h4: {
-      fontFamily: "IM Fell DW Pica",
+      fontFamily: "Rye",
     },
     h5: {
-      fontFamily: "IM Fell DW Pica",
+      fontFamily: "Rye",
+      color: "#19259b",
     },
     h6: {
-      fontFamily: "IM Fell DW Pica",
+      fontFamily: "Rye",
     },
     subtitle1: {
       fontFamily: "Open Sans",
@@ -51,6 +53,18 @@ export const evermoreThemeOptions = {
       fontFamily: "Open Sans",
     },
   },
+  components: {
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          "&:hover": {
+            background:
+              "linear-gradient(60deg, rgba(25, 37, 139, 12%), rgba(116, 116, 116, 12%))",
+          },
+        },
+      },
+    },
+  },
 };
 
-export const theme = createTheme(evermoreThemeOptions);
+export const theme = createTheme(themeOptions);

@@ -1,72 +1,45 @@
-import { ClickAwayListener } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
 import React, { useState } from "react";
-import About from "../About/about.js";
-import { Clock, Butterfly } from "../BackgroundAssets";
-import EraModal from "../EraModal/EraModal.js";
-import Nav from "../Nav/Nav";
-import "../styles.css";
-import themeMap from "../themes/index.js";
+import About from "../About/About.js";
+import Nav from "../Nav/Nav.js";
+import "../styles/styles.scss";
+import { ThemeProvider } from "@emotion/react";
+import { theme } from "../styles/theme.js";
+import Title from "../components/Title/Title.js";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Typography } from "@mui/material";
 
 export default function App() {
-  const storedThemeName = localStorage.getItem("themeName");
-  const [themeName, setThemeName] = useState(storedThemeName || "midnights");
-  const [modalOpen, setModalOpen] = useState(false);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
-  const handleOpenThemePicker = () => {
-    setModalOpen(true);
-  };
-
-  const handleUpdateTheme = (era) => {
-    setThemeName(era);
-    handleClose();
-  };
-
-  const handleClose = () => {
-    setDrawerOpen(false);
-    setModalOpen(false);
-  };
-
   return (
-    <ThemeProvider theme={themeMap[themeName]}>
-      <ClickAwayListener onClickAway={handleClose}>
-        <>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <div
+          style={{
+            height: "100vh",
+          }}
+        >
+          <Nav />
+          <div style={{ width: "95%", marginRight: "auto" }}>
+            <Routes>
+              <Route path="about" element={<About />} />
+              {/* <Route path="home" element={<About />} /> */}
+            </Routes>
+          </div>
           <div
-            className={`App ${themeName}-bg`}
             style={{
-              height: "100vh",
+              position: "absolute",
+              right: "calc(0px - 13%)",
+              top: "calc(0px + 22%)",
+              transform: "rotate(90deg)",
             }}
           >
-            <Nav
-              openThemePicker={handleOpenThemePicker}
-              currentTheme={themeName}
-              handleDrawer={setDrawerOpen}
-              open={drawerOpen}
-            />
-            <div style={{ position: "relative", height: "90%" }}>
-              {themeName === "midnights" && <Clock />}
-              {themeName === "debut" && <Butterfly />}
-              <div
-                style={{
-                  position: "absolute",
-                  left: "50%",
-                  top: 36,
-                  overflowY: "scroll",
-                  height: "100%",
-                }}
-              >
-                <About />
-              </div>
-            </div>
+            <Title />
           </div>
-          <EraModal
-            open={modalOpen}
-            handleClose={handleClose}
-            handleUpdateTheme={handleUpdateTheme}
-          />
-        </>
-      </ClickAwayListener>
+          <Title title="raechel odom" />
+          <Typography variant="h5">
+            second loudest laugh in the west (second only to my sister)
+          </Typography>
+        </div>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

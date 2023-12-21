@@ -1,47 +1,59 @@
-import { Divider, Drawer, Button, Typography } from "@mui/material";
-import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { ClickAwayListener } from "@mui/material";
+import { Button, Menu, MenuItem, Typography } from "@mui/material";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { theme } from "../styles/theme";
 
-export default function Nav({
-  open,
-  handleDrawer,
-  openThemePicker,
-  currentTheme,
-}) {
-  // const [open, setOpen] = useState(false);
+export default function Nav() {
+  const [open, setOpen] = useState(false);
+  const anchorEl = useRef();
+  const navigate = useNavigate();
 
   const handleOpen = (e) => {
-    if (e.type === "keydown" && (e.key === "Tab" || e.key === "Shift")) {
-      return;
-    }
-    handleDrawer(true);
+    setOpen(true);
+    anchorEl.current = e.target;
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
-    <ClickAwayListener onClickAway={() => handleDrawer(false)}>
-      <>
-        <Button
-          color="secondary"
-          onClick={(e) => handleOpen(e)}
-          style={{ marginLeft: "auto", display: "flex" }}
-        >
-          <MenuIcon />
-        </Button>
-        <Drawer anchor="right" open={open} onClose={() => handleDrawer(false)}>
-          <div style={{ padding: "24px" }}>
-            <Typography>Current theme: {currentTheme}</Typography>
-            <Button variant="contained" onClick={openThemePicker}>
-              Pick a theme
-            </Button>
-            <Divider />
-            <Typography>Contact me</Typography>
-            <Typography>About me</Typography>
-            {/* put links here to github, linkedin */}
-            {/* add dark mode option here? will def conflict with customized themes tho */}
-          </div>
-        </Drawer>
-      </>
-    </ClickAwayListener>
+    <>
+      <Button
+        color="secondary"
+        onClick={(e) => handleOpen(e)}
+        style={{
+          marginRight: "auto",
+          display: "flex",
+        }}
+      >
+        <MenuIcon />
+      </Button>
+      <Menu
+        open={open}
+        anchorEl={anchorEl.current}
+        onClose={handleClose}
+        sx={{
+          ".MuiMenu-paper": {
+            border: `1px solid ${theme.palette.primary.main}`,
+            boxShadow:
+              "0px 5px 5px -3px rgb(25 37 155 / 10%), 0px 8px 10px 1px rgb(25 37 155 / 10%), 0px 3px 14px 2px rgb(25 37 155 / 20%)",
+          },
+        }}
+      >
+        {["about", "projects", "skills", "contact"].map((item) => (
+          <MenuItem
+            onClick={() => {
+              navigate(`/${item}`);
+              handleClose();
+            }}
+            key={`nav-menu-${item}`}
+          >
+            <Typography>{item}</Typography>
+          </MenuItem>
+        ))}
+      </Menu>
+    </>
   );
 }

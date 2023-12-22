@@ -1,11 +1,15 @@
-import { Card, Typography } from "@mui/material";
+import { Card, Grid, Typography } from "@mui/material";
 import React from "react";
 import Title from "../components/Title/Title.js";
+import meinmountains from "../assets/meinmountains.jpg";
 
 export default function About() {
   return (
     <Card className="about-section about-info">
-      <Title title="Hello, there! I'm Raechel." />
+      <Grid display="flex" spacing={1}>
+        <Title title="Hello, there! I'm Raechel." />
+        <img src={meinmountains} alt="" style={{ width: "140px" }} />
+      </Grid>
       <Typography>
         There are three things you'll learn within minutes of meeting me: I play
         far too much D&D, I'm a big swiftie, and I have the loudest laugh you've

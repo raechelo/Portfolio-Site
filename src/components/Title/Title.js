@@ -7,19 +7,6 @@ const Title = ({ title }) => {
   const elementRef = useRef(null);
   const [width, setWidth] = useState();
 
-  const getTitle = () => {
-    switch (location.pathname) {
-      case "/contact":
-        return "contact me";
-      case "/projects":
-        return "projects";
-      case "/skills":
-        return "my skills";
-      default:
-        return "about me";
-    }
-  };
-
   const getWidth = (el) => {
     elementRef.current = el.currentTarget.width;
   };
@@ -46,7 +33,7 @@ const Title = ({ title }) => {
         // width: getWidth()
       }}
     >
-      {title || getTitle()}
+      {title || `${location.pathname.slice(1)}`}
     </Typography>
   );
 };

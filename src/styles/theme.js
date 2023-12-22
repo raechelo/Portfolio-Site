@@ -32,10 +32,10 @@ export const themeOptions = {
       fontFamily: "Rye",
     },
     subtitle1: {
-      fontFamily: "Open Sans",
+      fontFamily: "Courier Prime",
     },
     subtitle2: {
-      fontFamily: "Open Sans",
+      fontFamily: "Courier Prime",
     },
     body1: {
       fontFamily: "Open Sans",
@@ -54,6 +54,42 @@ export const themeOptions = {
     },
   },
   components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+          borderRadius: "25px",
+          boxShadow:
+            "0px 5px 5px -3px rgb(25 37 155 / 10%), 0px 8px 10px 1px rgb(25 37 155 / 10%), 0px 3px 14px 2px rgb(25 37 155 / 20%)",
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          padding: "16px",
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Courier Prime",
+          color: "#fff",
+          fontWeight: "bold",
+          margin: "8px",
+          "&:nth-of-type(even)": {
+            backgroundColor: "#19259b",
+          },
+          "&:nth-of-type(odd)": {
+            backgroundColor: "#747474",
+          },
+          "&:last-of-type": {
+            marginRight: "auto",
+          },
+        },
+      },
+    },
     MuiMenuItem: {
       styleOverrides: {
         root: {

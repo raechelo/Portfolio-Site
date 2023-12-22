@@ -100,6 +100,13 @@ export const themeOptions = {
         },
       },
     },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          fontFamily: "Courier Prime",
+        },
+      },
+    },
   },
 };
 

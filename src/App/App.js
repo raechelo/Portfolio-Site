@@ -7,6 +7,7 @@ import Title from "../components/Title/Title.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Skills from "../Skills/Skills.js";
 import WesternCorner from "../assets/western-corner.svg";
+import Contact from "../Contact/Contact.js";
 
 export default function App() {
   return (
@@ -30,7 +31,7 @@ export default function App() {
             <div style={{ padding: "48px" }}>
               <Routes>
                 <Route path="about" element={<About />} />
-                <Route path="home" element={<About />} />
+                <Route path="contact" element={<Contact />} />
                 <Route path="skills" element={<Skills />} />
               </Routes>
             </div>

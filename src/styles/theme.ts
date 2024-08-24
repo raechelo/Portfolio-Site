@@ -51,6 +51,17 @@ export const themeOptions: ThemeOptions = {
       fontFamily: "Orbitron",
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 0,
+          // "clip-path":
+          //   "polygon(0 0, 80% 0, 100% 40%, 100% 100%, 100% 100%, 20% 100%, 0 60%)",
+        },
+      },
+    },
+  },
 };
 
 const theme = createTheme(themeOptions);
